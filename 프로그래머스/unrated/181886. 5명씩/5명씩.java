@@ -8,12 +8,11 @@ class Solution {
             answer = new String[names.length / 5 + 1];
         }
         
-        int k = 0;
+        int idx = 0;
 
         for (int i = 0; i < names.length; i += 5) {
-          answer[k] = names[i];
-          System.out.println(answer[k]);
-          k++;
+          answer[idx] = names[i];
+          idx++;
         }
 
         return answer;
