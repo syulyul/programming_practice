@@ -1,6 +1,6 @@
 class Solution {
     public int[] solution(int n) {
-        int[] answer;
+        int[] answer = {};
         int idx = 0;
         
         if ((n & 1) == 0) {
