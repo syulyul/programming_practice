@@ -4,7 +4,7 @@ class Solution {
         
         for (int i = 0; i < my_string.length(); i++) {
             if (my_string.charAt(i) >= '1' && my_string.charAt(i) <= '9') {
-                answer += (my_string.charAt(i) - '0');
+                answer += my_string.charAt(i) - '0';
             }
         }
         
