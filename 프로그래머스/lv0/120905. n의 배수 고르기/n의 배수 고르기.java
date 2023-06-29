@@ -1,8 +1,10 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+
 class Solution {
     public int[] solution(int n, int[] numlist) {
         int[] answer = {};
-        ArrayList<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         
         for (int i = 0; i < numlist.length; i++) {
             if (numlist[i] % n == 0) {
