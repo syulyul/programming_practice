@@ -1,18 +1,19 @@
+import java.util.Arrays;
 class Solution {
     public int solution(int[] numbers) {
         int answer = 0;
-        int temp = 0;
-        int max = -100000000;
+        int minusMax = 0;
+        int plusMax = 0;
         
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                temp = numbers[i] * numbers[j];
-                if (max < temp) {
-                    max = temp;
-                }
-            }
+        Arrays.sort(numbers);
+        minusMax = numbers[0] * numbers[1];
+        plusMax = numbers[numbers.length - 1] * numbers[numbers.length - 2];
+        
+        if (minusMax < plusMax) {
+            answer = plusMax;
+        } else {
+            answer = minusMax;
         }
-        answer = max;
         
         return answer;
     }
