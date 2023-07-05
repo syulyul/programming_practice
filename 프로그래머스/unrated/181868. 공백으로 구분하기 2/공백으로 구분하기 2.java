@@ -1,27 +1,25 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class Solution {
     public String[] solution(String my_string) {
+        // String[] answer = {};
+        // return answer;
         String[] answer = {};
-        
-        if (my_string.charAt(0) == ' ') {
-            for (int i = 0; i < my_string.length(); i++) {
-                my_string.replace(" ", "");
-                if (my_string.charAt(i) != ' ') {
-                    my_string = my_string.replaceAll("\\s+", " ");
-            answer = my_string.split(" ");
-                    answer = Arrays.copyOfRange(answer, 1, answer.length);
-                }
+        String[] split = my_string.split(" ");
+        ArrayList<String> list = new ArrayList<>();
+
+        for(int i = 0; i < split.length; i ++){
+            if(!split[i].equals("")){
+                list.add(split[i]);  
             }
-        } else {
-            my_string = my_string.replaceAll("\\s+", " ");
-            answer = my_string.split(" ");
         }
         
-        my_string = my_string.replaceAll("\\s+", " ");
+        answer = new String[list.size()];
         
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
         return answer;
     }
 }
