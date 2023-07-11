@@ -6,17 +6,12 @@ class Solution {
         
         List<Integer> list = new ArrayList<>();
         
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < delete_list.length; j++) {
-                if (arr[i] == delete_list[j]) {
-                    arr[i] = 0;
-                }
-            }
+        for (int i : arr) {
+            list.add(i);
         }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                list.add(arr[i]);
-            }
+        
+        for (int i : delete_list) {
+            list.remove((Integer)i);
         }
         answer = new int[list.size()];
         
