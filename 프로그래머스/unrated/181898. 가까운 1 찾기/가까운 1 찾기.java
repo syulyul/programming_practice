@@ -5,7 +5,7 @@ class Solution {
         for (int i = 0; i < arr.length; i++) {
             if (i >= idx && arr[i] == 1) {
                 answer = i;
-                return answer;
+                break;
             } else {
                 answer = -1;
             }
