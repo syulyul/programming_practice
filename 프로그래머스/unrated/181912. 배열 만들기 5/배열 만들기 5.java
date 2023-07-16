@@ -3,7 +3,6 @@ import java.util.*;
 class Solution {
     public int[] solution(String[] intStrs, int k, int s, int l) {
         int[] answer = {};
-        String[] str = new String[intStrs.length];
         int[] n = new int[intStrs.length];
         ArrayList<Integer> al = new ArrayList<>();
         
