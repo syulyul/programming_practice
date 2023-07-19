@@ -1,10 +1,10 @@
 # [level 0] 팩토리얼 - 120848 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120848) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120848?language=java) 
 
 ### 성능 요약
 
-메모리: 77.6 MB, 시간: 0.02 ms
+메모리: 78.2 MB, 시간: 0.02 ms
 
 ### 구분
 
