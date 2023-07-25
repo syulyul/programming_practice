@@ -2,8 +2,8 @@ class Solution {
     public int solution(String my_string) {
         int answer = 0;
         
-        String str = my_string.toLowerCase();
-        String[] s = str.split("[a-zA-Z]+");
+        String[] s = my_string.replaceAll("[a-zA-Z]", " ").split(" ");
+
     
         for (int i = 0; i < s.length; i++) {
             if (!s[i].equals("")) {
