@@ -9,7 +9,6 @@ class Solution {
         }
         
         if (x % num != 0) answer = false;
-        else answer = true;
         
         return answer;
     }
