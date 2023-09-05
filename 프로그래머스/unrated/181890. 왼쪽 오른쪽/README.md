@@ -1,10 +1,10 @@
 # [unrated] 왼쪽 오른쪽 - 181890 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181890) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181890?language=java) 
 
 ### 성능 요약
 
-메모리: 70.1 MB, 시간: 0.02 ms
+메모리: 65.8 MB, 시간: 0.03 ms
 
 ### 구분
 
