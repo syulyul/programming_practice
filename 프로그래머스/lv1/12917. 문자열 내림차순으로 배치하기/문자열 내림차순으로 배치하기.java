@@ -7,9 +7,8 @@ class Solution {
         
         Arrays.sort(c);
         
-        for (int i = c.length - 1; i >= 0; i--) {
-            answer += c[i];
-        }
+        StringBuilder sb = new StringBuilder(String.valueOf(c));
+        answer += sb.reverse().toString();
         
         return answer;
     }
