@@ -2,8 +2,8 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
-        if (arr.length <= 1) {
-            // 배열의 길이가 1 이하인 경우, -1을 포함한 배열 반환
+        if (arr.length == 1) {
+            // 배열의 길이가 1 인 경우, -1을 포함한 배열 반환
             return new int[]{-1};
         } else {
             // 배열을 복사하여 정렬
