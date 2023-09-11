@@ -21,7 +21,6 @@ class Solution {
                     answer[idx++] = value;
                 }
             }
-
             return answer;
         }
     }
