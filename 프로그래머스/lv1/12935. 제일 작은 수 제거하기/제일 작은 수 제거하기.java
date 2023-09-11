@@ -14,15 +14,15 @@ class Solution {
             int min = sortedArr[0];
 
             // 가장 작은 수를 제외한 새로운 배열 생성
-            int[] ret = new int[arr.length - 1];
+            int[] answer = new int[arr.length - 1];
             int idx = 0;
             for (int value : arr) {
                 if (value != min) {
-                    ret[idx++] = value;
+                    answer[idx++] = value;
                 }
             }
 
-            return ret;
+            return answer;
         }
     }
 }
