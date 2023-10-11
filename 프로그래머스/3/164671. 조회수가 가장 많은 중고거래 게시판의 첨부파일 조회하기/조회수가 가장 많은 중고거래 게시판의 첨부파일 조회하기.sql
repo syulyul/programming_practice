@@ -1,5 +1,7 @@
-SELECT CONCAT("/home/grep/src/",f.board_id, "/",f.file_id,f.file_name,f.file_ext)
-FROM USED_GOODS_FILE f
-JOIN USED_GOODS_BOARD b ON f.board_id = b.board_id
-WHERE b.views = (SELECT MAX(views) FROM USED_GOODS_BOARD)
-ORDER BY f.file_id DESC;
+-- 코드를 입력하세요
+SELECT CONCAT("/home/grep/src/", b.BOARD_ID, "/", b.FILE_ID, b.FILE_NAME, b.FILE_EXT) AS FILE_PATH
+FROM USED_GOODS_BOARD a
+    JOIN USED_GOODS_FILE b
+    ON a.BOARD_ID = b.BOARD_ID
+WHERE a.VIEWS = (SELECT MAX(VIEWS) FROM USED_GOODS_BOARD)
+ORDER BY b.FILE_ID DESC;
