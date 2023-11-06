@@ -8,11 +8,11 @@ class Solution {
         int[] selected = new int[3];
         HashMap<Integer, Integer> hm = new HashMap<>();
         
-        for(int i = 0; i < rank.length; i++) {
+        for (int i = 0; i < rank.length; i++) {
             hm.put(rank[i], i);
         }
         
-        while(idx < 3){
+        while (idx < 3){
             if(attendance[hm.get(r)])
                 selected[idx++] = hm.get(r);
             r++;
