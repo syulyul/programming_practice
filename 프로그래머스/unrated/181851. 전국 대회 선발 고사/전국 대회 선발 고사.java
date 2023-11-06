@@ -13,8 +13,9 @@ class Solution {
         }
         
         while (idx < 3){
-            if(attendance[hm.get(r)])
+            if(attendance[hm.get(r)]) {
                 selected[idx++] = hm.get(r);
+            }
             r++;
         }
         return selected[0] * 10000 + selected[1] * 100 + selected[2];
