@@ -6,4 +6,4 @@ WHERE (CATEGORY, PRICE) IN (SELECT CATEGORY, MAX(PRICE)
                             GROUP BY CATEGORY
                             HAVING CATEGORY IN ('과자', '국', '김치', '식용유'))
 GROUP BY CATEGORY
-ORDER BY PRICE DESC;
+ORDER BY 2 DESC;
