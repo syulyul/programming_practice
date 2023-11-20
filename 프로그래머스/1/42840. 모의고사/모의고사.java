@@ -24,9 +24,7 @@ class Solution {
             for (int person = 0; person < RULES.length; person++) {
                 int picked = getPicked(person, problem);
                 if (answer == picked) {
-                    corrects[person]++;
-                    
-                    if (corrects[person] > max) {
+                    if (++corrects[person] > max) {
                         max = corrects[person];
                     }
                 }
