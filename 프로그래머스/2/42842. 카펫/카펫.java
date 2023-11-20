@@ -1,17 +1,17 @@
 class Solution {
     public int[] solution(int brown, int yellow) {
-        int[] ret = new int[2];
         
         for (int x = 3; x <= 5000; x++) {
-            int y = (brown + yellow) / x;
-            
-            if ((x - 2) * (y - 2) == yellow) {
-                ret[0] = y;
-                ret[1] = x;
-                break;
+            for (int y = 3; y <= x; y++) {
+                int boundary = (x + y - 2) * 2;
+                int center = x * y - boundary;
+                
+                if (brown == boundary && yellow == center) {
+                    return new int[] {x, y};
+                }
             }
         }
         
-        return ret;
+        return null;
     }
 }
