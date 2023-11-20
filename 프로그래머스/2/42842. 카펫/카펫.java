@@ -2,7 +2,7 @@ class Solution {
     public int[] solution(int brown, int yellow) {
         int[] ret = new int[2];
         
-        for (int x = 3; x < brown + yellow; x++) {
+        for (int x = 3; x <= 5000; x++) {
             int y = (brown + yellow) / x;
             
             if ((x - 2) * (y - 2) == yellow) {
