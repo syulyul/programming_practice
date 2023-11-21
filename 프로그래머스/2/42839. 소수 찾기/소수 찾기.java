@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.*;
 
 class Solution {
     
@@ -11,34 +10,29 @@ class Solution {
         return true;
     }
     
-    private Set<Integer> getPrimes(int comb, List<Integer> numbers, Set<Integer> primes) {
+    private void getPrimes(int comb, int[] numbers, boolean[] isUsed, 
+                           Set<Integer> primes) {
         
         // 점화식 구현
         if (isPrime(comb)) primes.add(comb);
         
         // 상태 전이 구현
-        for (int i = 0; i < numbers.size(); i++) {
-            // numbers.get(i)로 상태 전이 진행
-            int nextComb = comb * 10 + numbers.get(i);
+        for (int i = 0; i < numbers.length; i++) {
+            if (isUsed[i]) continue;
             
-            List<Integer> nextNumbers = new ArrayList<>(numbers);
-            nextNumbers.remove(i);
+            // numbers[i]로 상태 전이 진행
+            int nextComb = comb * 10 + numbers[i];
             
-            // 재귀를 이용하여 전이 상태에 대한 부분 문제를 풀고, 그 결과 집합을 현재 풀고 있는 상태의 결과 집합에 합침
-            getPrimes(nextComb, nextNumbers, primes);
+            isUsed[i] = true;
+            getPrimes(nextComb, numbers, isUsed, primes);
+            isUsed[i] = false;
         }
-            
-        return primes;
     }
     
     public int solution(String nums) {
         Set<Integer> primes = new HashSet<>();
-        List<Integer> numbers = nums.chars()
-            .map(c -> c - '0')
-            .boxed()
-            .collect(Collectors.toList());
-        
-        getPrimes(0, numbers, primes);
+        int[] numbers = nums.chars().map(c -> c - '0').toArray(); // 수정
+        getPrimes(0, numbers, new boolean[numbers.length], primes); // 수정
         return primes.size();
     }
 }
