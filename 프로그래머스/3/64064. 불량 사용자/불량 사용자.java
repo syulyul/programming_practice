@@ -26,7 +26,9 @@ class Solution {
             .toArray(String[][]::new);
         
         Set<Set<String>> banSet = new HashSet<>();
+        
         count(0, new HashSet<>(), bans, banSet);
+        
         return banSet.size();
     }
 }
