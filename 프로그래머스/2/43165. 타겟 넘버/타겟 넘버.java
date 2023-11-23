@@ -25,9 +25,10 @@ class Solution {
                 if (state.acc == target) cnt++;
                 continue;
             }
-            
-            s.push(new State(state.idx + 1, state.acc - numbers[state.idx]));
+            // +를 선택한 경우
             s.push(new State(state.idx + 1, state.acc + numbers[state.idx]));
+            // -를 선택한 경우
+            s.push(new State(state.idx + 1, state.acc - numbers[state.idx]));
         }
         return cnt;
     }
