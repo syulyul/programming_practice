@@ -1,30 +1,23 @@
 class Solution {
     public int[] solution(int n, int m) {
-        int[] answer = new int [2];
-        int cnt = 2;
-        int min = 1;
-        int max = 1;
-        int tmp = 0;
+        int[] answer = new int[2];
         
-        if (n > m) {
-            tmp = n;
-            n = m;
-            m = tmp;
-        }
+        int gcd = getGCD(n, m);
         
-        while (cnt <= m) {
-            if (n % cnt == 0 && m % cnt == 0) {
-                max *= cnt;
-                n /= cnt;
-                m /= cnt;
-            } else {
-                cnt++;
-            }
-        }
-        answer[0] = max;
-        answer[1] = answer[0] * n * m;
+        int lcm = n * m / gcd;
         
+        answer[0] = gcd;
+        answer[1] = lcm;
         
         return answer;
+    }
+    
+    private int getGCD(int a, int b) {
+        while (b != 0) {
+            int r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
     }
 }
