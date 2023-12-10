@@ -1,6 +1,5 @@
 class Solution {
     public int solution(int[][] sizes) {
-        int answer = 0;
         int max0 = 1;
         int max1 = 1;
         
@@ -15,9 +14,7 @@ class Solution {
                 if (sizes[i][0] > max0) max0 = sizes[i][0];
                 if (sizes[i][1] > max1) max1 = sizes[i][1];
             }
-            answer = max0 * max1;
         }
-        
-        return answer;
+        return max0 * max1;
     }
 }
