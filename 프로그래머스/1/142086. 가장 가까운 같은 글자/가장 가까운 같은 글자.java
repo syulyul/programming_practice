@@ -7,13 +7,13 @@ class Solution {
 
         for (int i = 0; i < s.length(); i++) {
             char currChar = s.charAt(i);
-
+            
             if (idx.containsKey(currChar)) {
                 answer[i] = i - idx.get(currChar);
             } else {
                 answer[i] = -1;
             }
-
+            
             idx.put(currChar, i);
         }
         
