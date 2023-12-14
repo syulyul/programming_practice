@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public String[] solution(String[] strings, int n) {
@@ -7,10 +7,8 @@ class Solution {
             char c2 = s2.charAt(n);
 
             if (c1 == c2) {
-                System.out.println(s1.compareTo(s2));
                 return s1.compareTo(s2);
             } else {
-                System.out.println(c1 - c2);
                 return c1 - c2;
             }
         });
