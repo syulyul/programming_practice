@@ -11,8 +11,6 @@ class Solution {
             answer[i] = arr[commands[i][2] - 1];
         }
         
-        
-        
         return answer;
     }
 }
