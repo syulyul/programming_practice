@@ -10,11 +10,11 @@ class Solution {
             }
         }
         
-        Integer[] arr = hs.toArray(new Integer[0]);
-        int[] answer = new int[arr.length];        
+        ArrayList<Integer> arr = new ArrayList<>(hs);
+        int[] answer = new int[arr.size()];
         
-        for (int i = 0; i < arr.length; i++) {
-            answer[i] = arr[i];
+        for (int i = 0; i < arr.size(); i++) {
+            answer[i] = arr.get(i);
         }
         
         Arrays.sort(answer);
