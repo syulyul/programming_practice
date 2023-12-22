@@ -1,31 +1,33 @@
-import java.util.LinkedList;
+import java.util.*;
 
 class Solution {
     public int[] solution(int k, int[] score) {
-        LinkedList<Integer> list = new LinkedList<>();
+        ArrayList<Integer> al = new ArrayList<>();
         int[] answer = new int[score.length];
-        loop : for(int j = 0; j < score.length; j++){
-            if(j > 0){
-                if(list.size() > k){
-                    answer[j - 1] = list.get(k - 1);
-                } else {
-                    answer[j - 1] = list.peekLast();
-                }
-                
+        
+        if (k <= score.length) {
+            for (int i = 0; i < k; i++) {
+                al.add(score[i]);
+                Collections.sort(al);
+                answer[i] = al.get(0);
             }
-            for(int i = 0; i < list.size(); i++){
-                if(list.get(i) < score[j]){
-                    list.add(i, score[j]);
-                    continue loop;
+
+            for (int i = k; i < score.length; i++) {
+                if (score[i] > al.get(0)) {
+                    al.remove(0);
+                    al.add(score[i]);
+                    Collections.sort(al);
                 }
+                answer[i] = al.get(0);
             }
-            list.add(score[j]);
-        }
-        if(list.size() > k){
-            answer[score.length - 1] = list.get(k - 1);
         } else {
-            answer[score.length - 1] = list.peekLast();
+            for (int i = 0; i < score.length; i++) {
+                al.add(score[i]);
+                Collections.sort(al);
+                answer[i] = al.get(0);
+            }
         }
+        
         return answer;
     }
 }
