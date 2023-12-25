@@ -1,8 +1,6 @@
 import java.io.*;
 
 public class Main {
-  static int titleN = 0;
-  static String title = "";
   public static void main(String[] args) throws Exception {
     
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,7 +18,7 @@ public class Main {
 
       if (cnt == n) {
         bw.write(String.valueOf(num));
-          break;
+        break;
       }
       num++;
     }
