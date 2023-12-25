@@ -5,7 +5,7 @@ public class Main {
   public static void main(String[] args) throws Exception {
     
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    // BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     int n = Integer.parseInt(br.readLine());
     String[] str = new String[n];
@@ -32,7 +32,10 @@ public class Main {
     }
     
     for (String el : hs) {
-        System.out.println(el);
+      bw.write(el);
+      bw.newLine();
     }
+
+    bw.flush();
   }
 }
