@@ -5,27 +5,29 @@ public class Main {
   public static void main(String[] args) throws Exception {
     
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    String str = "";
-    ArrayList<String> al = new ArrayList<>();
-    LinkedHashSet<String> hs = new LinkedHashSet<>();
+    // BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    while((str = br.readLine()) != null && !str.isEmpty()) {
-      StringTokenizer st = new StringTokenizer(str);
-      al.add(st.nextToken());
+    int n = Integer.parseInt(br.readLine());
+    String[] str = new String[n];
+    
+    for (int i = 0; i < n; i++) {
+      str[i] = br.readLine();
     }
 
-    Collections.sort(al);
-    Collections.sort(al, Comparator.comparingInt(String::length));
-    
-    for (int i = 0; i < al.size(); i++) {
+    LinkedHashSet<String> hs = new LinkedHashSet<>();
+
+    Arrays.sort(str);
+    Arrays.sort(str, Comparator.comparingInt(String::length));
+
+    for (int i = 0; i < str.length; i++) {
       String s = "";
-      for (char ch : al.get(i).toCharArray()) {
+      for (char ch : str[i].toCharArray()) {
         if (ch >= 'a' && ch <= 'z') {
           s += ch;
         }
       }
-      if (s.equals(al.get(i))) {
-        hs.add(al.get(i));
+      if (s.equals(str[i])) {
+        hs.add(str[i]);
       }
     }
     
