@@ -14,32 +14,15 @@ public class Main {
       al.add(st.nextToken());
     }
 
-    for (int i = 0; i < al.size(); i++) {
-      String origin = al.get(i);
-      String s = "";
-      String rs = "";
-
-      for (int j = 0; j < origin.length() / 2; j++) {
-        s += origin.charAt(j) + "";
-      }
-
-      if (origin.length() % 2 == 0) {
-        for (int j = origin.length() - 1; j >= s.length(); j--) {
-          rs += origin.charAt(j) + "";
-        }
-      } else {
-        for (int j = origin.length() - 1; j > s.length(); j--) {
-          rs += origin.charAt(j) + "";
-        }
-      }
-
-      if (s.equals(rs)) {
-        bw.write("yes");
-      } else {
-        bw.write("no");
-      }
-      bw.newLine();
+    for (String origin : al) {
+      String s = origin.substring(0, origin.length() / 2);
+      String rs = (origin.length() % 2 == 0) ? 
+                new StringBuilder(origin.substring(origin.length() / 2)).reverse().toString() :
+                new StringBuilder(origin.substring(origin.length() / 2 + 1)).reverse().toString();
+      
+      bw.write(s.equals(rs) ? "yes\n" : "no\n");
     }
+    
     bw.flush();
     bw.close();
   }
