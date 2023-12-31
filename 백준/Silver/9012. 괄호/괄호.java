@@ -9,12 +9,9 @@ public class Main {
 
     int n = Integer.parseInt(br.readLine());
     
-    ArrayList<String> al = new ArrayList<>();
-    
     for (int i = 0; i < n; i++) {
       String str = br.readLine();
-      al.add(checkParentheses(str));
-      bw.write(al.get(i));
+      bw.write(checkParentheses(str));
     }
 
     bw.newLine();
@@ -32,7 +29,7 @@ public class Main {
         stack.push(ch);
       } else if (ch == ')') {
         if (stack.isEmpty()) {
-          return "NO\n"; // 여는 괄호 없이 닫는 괄호가 나올 경우
+          return "NO\n";
         } else {
           stack.pop();
         }
@@ -40,9 +37,9 @@ public class Main {
     }
 
     if (stack.isEmpty()) {
-      return "YES\n"; // 괄호가 쌍을 이룸
+      return "YES\n";
     } else {
-      return "NO\n"; // 여는 괄호가 남아있음
+      return "NO\n";
     }
   }
 }
