@@ -11,11 +11,11 @@ public class Main {
 
     while (true) {
       int sum = 0;
-      int num = number;
-      sum += num;
+      int current = number;
+      sum += current;
       for (int i = 0; i < String.valueOf(n).length(); i++) {
-        sum += num % 10;
-        num /= 10;
+        sum += current % 10;
+        current /= 10;
       }
       if (sum == n) {
         bw.write(String.valueOf(number));
