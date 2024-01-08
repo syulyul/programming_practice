@@ -55,6 +55,10 @@ public class Main {
                   bw.write("-1");
               }
               break;
+                  
+            default:
+              break;
+                  
           }
           if (!input.equals("push")) {
             bw.newLine();
