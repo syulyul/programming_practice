@@ -6,12 +6,9 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
-      
-        int r = 0;
-        int bag = 0;
-        
         int bag5 = N / 5;
         int bag3 = 0;
+        int r = 0;
 
         while (bag5 >= 0) {
           if (bag5 > 0) {
@@ -24,7 +21,6 @@ public class Main {
           r %= 3;
 
           if (r == 0) {
-            bag = bag5 + bag3;
             bw.write(String.valueOf(bag5 + bag3));
             break;
           }
