@@ -8,20 +8,22 @@ public class Main {
   public static void main(String[] args) throws IOException {
     int T = Integer.parseInt(br.readLine());
 
-      for (int t = 0; t < T; t++) {
-        int n = Integer.parseInt(br.readLine());
-        int[] dp = new int[11];
+    for (int i = 0; i < T; i++) {
+      int sum = Integer.parseInt(br.readLine());
 
-        dp[1] = 1;
-        dp[2] = 2;
-        dp[3] = 4;
+      int[] dp = new int[11];
 
-        for (int i = 4; i <= n; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
-        }
+      dp[1] = 1;
+      dp[2] = 2;
+      dp[3] = 4;
 
-        bw.write(dp[n] + "\n");
+      for (int j = 4; j <= sum; j++) {
+        dp[j] = dp[j - 1] + dp[j - 2] + dp[j - 3];
+      }
+
+      bw.write(dp[sum] + "\n");
     }
+		
     br.close();
     bw.close();
   }
