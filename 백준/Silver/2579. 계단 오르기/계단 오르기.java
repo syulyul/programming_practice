@@ -7,21 +7,21 @@ public class Main {
   public static void main(String[] args) throws IOException {
     int stairs = Integer.parseInt(br.readLine());
     int[] score = new int[stairs + 1];
-    int[] dp = new int[stairs + 1];
 
     for (int i = 1; i <= stairs; i++) {
       score[i] = Integer.parseInt(br.readLine());
     }
     br.close();
 
-    dp[1] = score[1];
-    if (stairs > 1) {
-      dp[2] = score[1] + score[2];
+    int[] g = new int[stairs + 1];
+    int[] h = new int[stairs + 1];
+    h[1] = score[1];
+
+    for (int i = 2; i <= stairs; i++) {
+      g[i] = h[i - 1] + score[i];
+      h[i] = Math.max(h[i - 2], g[i - 2]) + score[i];
     }
-    for (int i = 3; i <= stairs; i++) {
-      dp[i] = Math.max(dp[i - 2], dp[i - 3] + score[i - 1]) + score[i];
-    }
-    bw.write(dp[stairs] + "\n");
+    bw.write(Math.max(g[stairs], h[stairs]) + "\n");
     bw.close();
   }
 }
