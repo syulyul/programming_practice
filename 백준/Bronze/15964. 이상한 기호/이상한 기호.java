@@ -10,13 +10,12 @@ public class Main {
     int A = Integer.parseInt(st.nextToken());
     int B = Integer.parseInt(st.nextToken());
 
-    bw.write(calc(A, B) + "\n");
+    long sum = A + B;
+    long diff = A - B;
+
+    bw.write(sum * diff + "\n");
     bw.flush();
     br.close();
     bw.close();
-  }
-
-  private static int calc(int A, int B) {
-    return (A+B) * (A-B);
   }
 }
