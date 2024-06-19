@@ -11,7 +11,7 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             int num = Integer.parseInt(st.nextToken());
-            card.put( num, card.getOrDefault(num, 0) + 1);
+            card.put( num, 1 );
         }
 
         int M = Integer.parseInt(br.readLine());
@@ -23,7 +23,6 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < M; i++)
             sb.append(card.getOrDefault(find[i], 0)).append(" ");
-
         bw.write(sb.toString());
         bw.flush();
         br.close();
